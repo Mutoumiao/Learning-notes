@@ -18,5 +18,5 @@
 >> - 综合服务类或电子商务网站的服务器
 
 ## 目录
-[1. REPL运行环境](https://github.com/Mutoumiao/Study-Nodejs/issues/1) 
-[2. Node.js 基础](https://github.com/Mutoumiao/Study-Nodejs/issues/2) |  [源码](./2.Node.js-basics)
+- [1. REPL运行环境](https://github.com/Mutoumiao/Study-Nodejs/issues/1) 
+- [2. Node.js 基础](https://github.com/Mutoumiao/Study-Nodejs/issues/2) |  [源码](./2.Node.js-basics)
