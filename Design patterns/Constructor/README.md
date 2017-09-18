@@ -4,7 +4,7 @@
 
 >Objcet构造器用于创建特定类型的对象--准备好对象以备使用,同时接收构造器可以使用的参数,以在第一次创建对象时,设置成员属性和方法的值
 
-### 对象创建
+###对象创建
 在Javascript中,创建对象的两种常用方法如下所示:
 ```javascript
 //下面每种方式都将创建一个新的空对象
@@ -60,7 +60,7 @@ defineProp(person, "hasBeard", false);
 
 //设置属性
 Object.defineProperties(newObject, {
-    "someKey": {
+    "someKey": {
         value: "hello world",
         writable: true
     },
@@ -111,4 +111,29 @@ var mondeo = new Car("Ford Mondeo", 2010, 5000);
 上述构造器版本缺点:
 上述方式使继承变得困难,toString()这样的函数是为每个使用Car构造器创建的新对象而分别重新定义的,这不是最理想的,因为这种函数应该在所有Car类型实例之间共享
 
+
+### 带原型的Constructor(构造器)
+
+>Javascript中有一个为prototype的属性,调用Javascript构造器创建一个对象后,新对象就会具有构造器原型的所有属性.通过这种方式,可以创建多个Car对象,并访问相同的原型
+
+```javascript
+function Car (model, year, miles) {
+    this.model = model;
+    this.year = year;
+    this.miles = miles;
+}
+
+//Car.prototype.toString不使用Car.prototype为了避免重新定义prototype
+Car.prototype.toString = function () {
+    return this.model + "has done" + this.miles + "miles";
+};
+
+//用法:
+var civic = new Car("Honda Civic", 2009, 20000);
+var mondeo = new Car("Ford Mondeo", 2010, 5000);
+
+console.log(civic.toString());
+console.log(mondeo.toString());
+```
+现在toString()的单一实例就能够在所有Car对象之间共享
 
