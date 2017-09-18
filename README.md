@@ -18,12 +18,11 @@
 >> - 综合服务类或电子商务网站的服务器
 
 ## 目录
-- [1. REPL运行环境](https://github.com/Mutoumiao/Study-Nodejs/issues/1) 
-- [2. Node.js 基础](https://github.com/Mutoumiao/Study-Nodejs/issues/2) |  [源码](./2.Node.js-basics)
+- [1. REPL运行环境](./Nodejs/1.%20REPL) 
+- [2. Node.js 基础](./Nodejs/2.%20Node.js) |  [源码](./Nodejs/2.%20Node.js/code/)
 - 持续更新中
 
 ---------------------------------------------------------------------------
-
 # JavaScipt设计模式学习笔记
 
 ### 设计模式的简单概述
