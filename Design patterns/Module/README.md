@@ -100,7 +100,7 @@ testModule.resetCounter()
 
 > 再这里,代码的其他部分无法直接读取`incrementCounter()`或`resetCounter()`包括`counter`变量,实际上是完全与全局作用域隔离,因此它表现得像一个私有变量,它的存在被局限于模块的闭包内,因此唯一能够访问其作用域的代码就是这两个函数,上述方法进行了有效的命名空间设置
 
-使用Module模式时,可能会觉得它可以用来定义一个简单的模板来入门使用,下面是一个包含命名空间,公有和私有变量的Module模式:
+使用`Module`模式时,可能会觉得它可以用来定义一个简单的模板来入门使用,下面是一个包含命名空间,公有和私有变量的`Module`模式:
 ```javascript
 
 var myNamespace = (function () {
@@ -126,7 +126,7 @@ var myNamespace = (function () {
 });
 
 ```
-使用Module模式实现购物车:
+使用`Module`模式实现购物车:
 ```javascript
 
 var basketModule = (function () {
@@ -194,8 +194,67 @@ var basketModule = (function () {
     console.log(basketModule.basket)
     console.log(basket)
 ```
-上述方法在basketModule内部都属于有效的命名空间设置
+上述方法在`basketModule`内部都属于有效的命名空间设置
 
 #### 优点:
 > - 只有我们的模块才能够享用私有函数的自由,因为它们不会暴露于页面的其余部分(只会暴露于我们输出的API),我们认为它们是真正的私有
 > - 鉴于函数往往已声明并命名,在试图找到有哪些函数抛出异常时,这将使得在调试器中显示调用堆栈变得更容易
+
+### Module模式变化
+
+#### 引入混入
+模式的这种变化演示了全局变量(如: `jQuery`, `Underscore`) 如何作为参数传递给模块的匿名函数,这允许我们引入它们,并按照我们所希望的为它们取个本地别名
+
+```javascript
+//全局模块
+
+var myModule = (function ($, _) {
+    function privateMethod1 () {
+        $(".container").html("test");
+    }
+
+    function privateMethod2 () {
+        console.log(_.min([10, 5, 100 2, 1000]));
+    }
+    
+    return {
+        publicMethod: function () {
+            privateMethod1();
+        }
+    }
+})(jQuery,_)
+
+myModule.publicMethod();
+```
+
+#### 引出
+
+下面一个变化允许我们声明全局变量,而不需实现它们,并可以同样地支持上一个示例中的全局引入的概念:
+```javascript
+
+//全局模块
+var myModule = (function () {
+
+    //模块对象
+    var module = {},
+        privateVariable = "hello world";
+    
+    function privateMethod () {
+        //....
+    }
+
+    module.publicProperty = "Foobar";
+    module.publicMethod = function () {
+        console.log(privateVariable);
+    };
+     
+    return module;
+})();
+
+```
+#### 优点: 
+> 相比真正的封装思想,它对于很多拥有面向对象背景的开发人员来说更加的整洁,至少是从Javascript的角度,其次,它支持私有数据,因此,在`Module`模式中,代码的公有部分能够接触私有部分,然而外界无法接触类的私有部分
+
+#### 缺点:
+> - 由于我们访问公有和私有成员的方式不同,当我们想改变可见性时,实际上我们必须要修改每个曾经使用过该成员的地方
+> - 无法为私有成员创建自动化单元测试,bug需要修正补丁时会添加额外的复杂性,为私有方法打补丁是不可能的,相反,我们必须覆盖所有与有bug的私有方法进行交互的公有方法,另外开发人员也无法轻易地扩展私有方法,所以私有方法并不像它们最初显现出来的那么灵活 
