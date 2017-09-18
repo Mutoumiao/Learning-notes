@@ -37,8 +37,8 @@
  > 看到模式时,通常就会表示有一个设置好的结构和表达解决方案的词汇,以帮助我们非常轻松地表达出所实现的大型解决方案
  
  ## 目录
-  
-  
+- [Constructor (构造器) 模式](./Design%20patterns/Constructor)
+- [Module (模块) 模式](./Design%20patterns/Module)  
   
   
 #### 内容参考: 
