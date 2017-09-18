@@ -38,3 +38,8 @@
  
  ## 目录
   
+  
+  
+  
+#### 内容参考: 
+> Learning JavaScript Design Patterns by Addy Osmani(O'Reilly). Copyright 2012 Addy Osmani, 978-1-449-33181-8
