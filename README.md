@@ -45,6 +45,7 @@
 - [Module (模块) 模式](./Design%20patterns/Module)
 - [Revealing Module(揭示模块)模式](./Design%20patterns/Revealing%20Module)
 - [Singleton(单例)模式](./Design%20patterns/Singleton)
+- 持续更新中
   
   
 #### 内容参考: 
