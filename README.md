@@ -42,8 +42,9 @@
  
  ## 目录
 - [Constructor (构造器) 模式](./Design%20patterns/Constructor)
-- [Module (模块) 模式](./Design%20patterns/Module)  
-  
+- [Module (模块) 模式](./Design%20patterns/Module)
+- [Revealing Module(揭示模块)模式](./Design%20patterns/Revealing Module)
+  
   
 #### 内容参考: 
 > Learning JavaScript Design Patterns by Addy Osmani(O'Reilly). Copyright 2012 Addy Osmani, 978-1-449-33181-8
