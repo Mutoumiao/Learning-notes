@@ -43,7 +43,7 @@
  ## 目录
 - [Constructor (构造器) 模式](./Design%20patterns/Constructor)
 - [Module (模块) 模式](./Design%20patterns/Module)
-- [Revealing Module(揭示模块)模式](./Design%20patterns/Revealing%Module)
+- [Revealing Module(揭示模块)模式](./Design%20patterns/Revealing%20Module)
   
   
 #### 内容参考: 
