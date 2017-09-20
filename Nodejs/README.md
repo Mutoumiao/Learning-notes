@@ -18,8 +18,8 @@
 >> - 综合服务类或电子商务网站的服务器
 
 ## 目录
-- [1. REPL运行环境](./Nodejs/1.%20REPL) 
-- [2. Node.js 基础](./Nodejs/2.%20Node.js) |  [源码](./Nodejs/2.%20Node.js/code/)
+- [1. REPL运行环境](./1.%20REPL) 
+- [2. Node.js 基础](./2.%20Node.js) |  [源码](./2.%20Node.js/code/)
 - 持续更新中
 
 #### 内容参考: 
