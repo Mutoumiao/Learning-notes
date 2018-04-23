@@ -281,9 +281,11 @@ propertyIsEnumerable()：判断某个属性是否可枚举。
 ```javascript
     a.length //长度
 ```
-- （3）Array.isArray()
+- （3）Array的静态方法
 ```javascript
-    Array.isArray(a) //用来判断一个值是否为数组
+Array.isArray(a) //用来判断一个值是否为数组
+Array.from()  //方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）
+
 ```
 - （4）Array实例的方法
 ```javascript
@@ -324,7 +326,18 @@ Number.MAX_VALUE：表示最大的正数，相应的，最小的负数为-Number
 Number.MIN_VALUE：表示最小的正数（即最接近0的正数，在64位浮点数体系中为5e-324），相应的，最接近0的负数为-Number.MIN_VALUE。
 Number.MAX_SAFE_INTEGER：表示能够精确表示的最大整数，即9007199254740991。
 Number.MIN_SAFE_INTEGER：表示能够精确表示的最小整数，即-9007199254740991
+Number.EPSILON： 表示极小的常量，它表示 1 与大于 1 的最小浮点数之间的差
 ```
+- （2）Number对象的静态方法
+```javascript
+Number.isInteger() //用来判断一个数值是否为整数
+Number.isFinite() //用来检查一个数值是否为有限的（finite），即不是Infinity。
+Number.isNaN() //用来检查一个值是否为NaN
+Number.parseInt() //类型转换成有效整数
+Number.parseFloat() //类型转换转换成包含浮点数
+ 
+```
+
 - （4）Number对象实例的方法
 ```javascript
 toString() //用来将一个数值转为字符串形式.可以接受一个参数，表示输出的进制。如果省略这个参数，默认将数值先转为十进制，再输出字符串；否则，就
@@ -365,6 +378,12 @@ s.match(regexp) //用于确定原字符串是否匹配某个子字符串，返�
 s.search() //返回值为匹配的第一个位置。如果没有找到匹配，则返回-1。
 s.replace(oldValue,newValue) //用于替换匹配的子字符串，一般情况下只替换第一个匹配（除非使用带有g修饰符的正则表达式）。
 s.split() //按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组。还可传入第二个参数，决定了返回数组的成员数。
+s.includes() //返回布尔值，表示是否找到了参数字符
+s.startsWith() //返回布尔值，表示参数字符串是否在原字符串的头部
+s.endsWith()//返回布尔值， 表示参数字符串是否在原字符串尾部
+s.repeat() //方法返回一个新字符串，表示将原字符串重复n次
+s.padStart() //如果字符串不够指定长度，会在头部补全
+s.padEnd() //如果字符串不够指定长度，会在尾部补全
 ```
 ### 3.5 Math对象
 - （1）属性
